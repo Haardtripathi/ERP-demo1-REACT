@@ -37,6 +37,7 @@ exports.getAddWorkbookData = (req, res, next) => {
 exports.getWorkbook = async (req, res, next) => {
   try {
     const data = await Workbook.find({ isDeleted: false });
+    console.log(data);
     res.json(data);
   } catch (err) {
     res.status(500).json({ message: err.message });
